@@ -14,22 +14,22 @@ Examples: temp.txt, temp.ann, temp2.txt, temp2.ann
 You may have subdirectories for data documents. However for each document both .txt and .ann files should be in the same directory. 
 
 # Building the Docker image for the first time
-Build an image from Dockerfile by issuing the build command specifying image name:tag:
+Build an image from Dockerfile by issuing the build command specifying image <name>:<tag>:\n
 docker build -t <image_name> .
 Example: 
 docker build -t brat-img . --no-cache
 
-Run the image as a container
+Run the image as a container\n
 docker run -d --privileged -p <host_port>:<container_port> -v <host_data_dir_you_created>:<container_data_dir> -e BRAT_USERNAME=<admin_username> -e BRAT_PASSWORD=<admin_password> -e BRAT_EMAIL=<admin_email> --name <container_name> <images_name>
 
-Example: 
+Example:\n 
 docker run -d --privileged -p 80:80 -v /Users/abc/Desktop/bratdata:/bratdata -e BRAT_USERNAME=john -e BRAT_PASSWORD=xyz -e BRAT_EMAIL=djohn@example.com --name myBrat brat-img
 
 If everything goes well, go to the address http://localhost:90 on a browser and you should be able to start annotating your documents. Note, that for performing annotation you need to be logged into the tool through the login button on top right.  
 Without login, you only get to view documents.
 
 # Additional docker commands
--- To list all images 
+-- To list all images
 docker images
 
 -- To list all containers 
