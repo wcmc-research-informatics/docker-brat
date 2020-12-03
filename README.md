@@ -15,7 +15,7 @@ You may have subdirectories for data documents. However for each document both .
 
 # Building the Docker image for the first time
 Build an image from Dockerfile by issuing the build command specifying image <name>:<tag>:  
-docker build -t <image_name> .
+docker build -t <image_name> .  
 Example:  
 docker build -t brat-img . --no-cache
 
@@ -36,10 +36,10 @@ docker images
 docker ps
 
 - To start a stopped container  
-docker start <Container ID or name>
+docker start Container_ID  
 
 -- To stop a running container  
-docker stop <Container ID or name>
+docker stop Container_ID  
 
 Executing on an running container, say to go to a bash terminal  
 docker exec -it <Container ID> bash
